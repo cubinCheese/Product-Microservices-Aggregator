@@ -3,13 +3,14 @@
 # defines the api gateway for client to access aggregator service
 
 # call aggregator service here
+import os
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import model.aggregator as aggregator
 
-# temporary hardcoded urls for iteminfod and stockinfod microservices
-item_url = "http://iteminfod:8080/item-info"
-stock_url = "http://stockinfod:8081/stock-info"
+# Accepts environment variables for microservice URLs, with hardcoded defaults for local testing
+item_url = os.environ.get("ITEMINFOD_URL", "http://iteminfod:8080/item-info")
+stock_url = os.environ.get("STOCKINFOD_URL", "http://stockinfod:8081/stock-info")
 
 app = FastAPI()
 aggregator_instance = aggregator.Aggregator(item_url, stock_url)
