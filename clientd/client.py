@@ -1,22 +1,61 @@
-# client.py
-# Entry point for clientd service
-import requests
 import json
+from typing import Dict
+import requests
 
-# make sure that "docker run -it -p 8080:8080 check_prime" is running.
-# then you can run this file (making a post request)
+"""client.py
 
-#url = "http://0.0.0.0:8080/prime"
+Simple container for three JSON test bodies used to exercise the aggregator
+final-aggregation cases:
 
-# url targeting aggregator
-lookup_url = "http://localhost:8000/lookup"
+  1) Item Info = 404  -> product not found
+  2) Item Info = 200 & Stock = 200 -> merged information
+  3) Item Info = 200 & Stock = 404 -> available: 0
 
-prod_id_val = input("Enter productID: ")
+This file only creates the data structure `TEST_PAYLOADS` and exposes a tiny
+helper to print them. Use these objects as the `json=` argument to `requests.post`.
+"""
 
-# send request for product id
-payload = {"productID": prod_id_val}
+# Three JSON bodies for testing the aggregator endpoint
+TEST_PAYLOADS: Dict[str, Dict[str, str]] = {
+    # 1) Item Info = 404 (no product)
+    "no_product": {"productID": "NOT_REAL_ID"},
 
-response = requests.post(lookup_url, json=payload)
+    # 2) Item Info = 200 and Stock = 200 (merged information expected)
+    "in_stock": {"productID": "XYZ-12345"},
 
-print(response.text)
+    # 3) Item Info = 200 and Stock = 404 (item exists but out of stock)
+    "out_of_stock": {"productID": "DEF-11111"},
+}
+
+def print_test_payloads():
+    print("Available test payloads:\n")
+    for name, payload in TEST_PAYLOADS.items():
+        print(f"- {name}:")
+        print(json.dumps(payload, indent=2))
+        print()
+
+
+if __name__ == "__main__":
+    print_test_payloads()
+
+    # helper to POST each payload to an aggregator URL and print the results
+    def post_all_payloads(lookup_url: str = "https://aggregatord-19495045139.us-west2.run.app/lookup"):
+
+        print(f"Posting {len(TEST_PAYLOADS)} payloads to {lookup_url}\n")
+        for name, payload in TEST_PAYLOADS.items():
+            try:
+                resp = requests.post(lookup_url, json=payload, timeout=5)
+            except requests.RequestException as e:
+                print(f"{name}: REQUEST ERROR: {e}\n")
+                continue
+
+            print(f"{name}: HTTP {resp.status_code}")
+            try:
+                print(json.dumps(resp.json(), indent=2))
+            except Exception:
+                print(resp.text)
+            print()
+
+    # run against local by default
+    post_all_payloads()
 
