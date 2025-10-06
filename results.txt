@@ -1,51 +1,38 @@
-Case 1: INVALID ID
-curl -i -X POST "https://aggregatord-19495045139.us-west2.run.app/lookup" \
-  -d '{"productID":"ABC-99999"}' \
-  -H "Content-Type: application/json"
+python3 client.py
+Available test payloads:
 
-"
-HTTP/2 404 
-content-type: application/json
-x-cloud-trace-context: 83b955f71345068e1f3f903f12896840;o=1
-date: Sun, 28 Sep 2025 08:43:07 GMT
-server: Google Frontend
-content-length: 29
-alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+- no_product:
+{
+  "productID": "NOT_REAL_ID"
+}
 
-{"error":"Product not found"}
-"
+- in_stock:
+{
+  "productID": "XYZ-12345"
+}
 
-Case 2: Valid ID w/ Stock
-curl -i -X POST "https://aggregatord-19495045139.us-west2.run.app/lookup" \
-  -d '{"productID":"XYZ-12345"}' \
-  -H "Content-Type: application/json"
+- out_of_stock:
+{
+  "productID": "DEF-11111"
+}
 
-"
-HTTP/2 200 
-content-type: application/json
-x-cloud-trace-context: d594e1fa4301128a7b7294553096dbed;o=1
-date: Sun, 28 Sep 2025 08:43:38 GMT
-server: Google Frontend
-content-length: 72
-alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Posting 3 payloads to https://aggregatord-19495045139.us-west2.run.app/lookup
 
-{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}
-"
+no_product: HTTP 404
+{
+  "error": "Product not found"
+}
 
-Case 3: Valid ID w/ NO Stock
-curl -i -X POST "https://aggregatord-19495045139.us-west2.run.app/lookup" \
-  -d '{"productID":"DEF-11111"}' \
-  -H "Content-Type: application/json"
+in_stock: HTTP 200
+{
+  "productID": "XYZ-12345",
+  "name": "Amayon Basics Wipes",
+  "available": "210"
+}
 
-"
-HTTP/2 200 
-content-type: application/json
-x-cloud-trace-context: 6785c02260c49c62a55a0fd40186dc77;o=1
-date: Sun, 28 Sep 2025 08:43:56 GMT
-server: Google Frontend
-content-length: 67
-alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-
-{"productID":"DEF-11111","name":"UltraSoft Towels","available":"0"}
-"
-
+out_of_stock: HTTP 200
+{
+  "productID": "DEF-11111",
+  "name": "UltraSoft Towels",
+  "available": "0"
+}

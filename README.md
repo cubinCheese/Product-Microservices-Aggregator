@@ -133,6 +133,9 @@ Submission Testing
 Final Aggregation
 If Item Info = 404, return 404 to client. (No product.)If Item Info = 200 and Stock = 200, return merged information.If Item Info = 200 and Stock = 404, return 200 with  available: 0
 
+## /clientd/client.py
+- Feel free to simply run this file, as it includes the three test cases mentioned.
+
 ## Aggregator Endpoint Test Cases
 
 **1. Item Info = 404 (No product)**
@@ -161,6 +164,7 @@ _Expected: HTTP 200 response with item info and `"available": 0`._
 
 Replace `NON_EXISTENT_ID`, `VALID_ID_WITH_STOCK`, and `VALID_ID_NO_STOCK` with actual product IDs for your test cases.
 - Respectively, using our own dummy data: ABC-99999, XYZ-12345, DEF-11111
+
 
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/W4tgy1bp)
