@@ -13,7 +13,7 @@ Available test payloads:
 
 - out_of_stock:
 {
-  "productID": "DEF-11111"
+  "productID": "RQY-22222"
 }
 
 Posting 3 payloads to https://aggregatord-19495045139.us-west2.run.app/lookup
@@ -30,9 +30,9 @@ in_stock: HTTP 200
   "available": "210"
 }
 
-out_of_stock: HTTP 200
+out_stock: HTTP 200
 {
-  "productID": "DEF-11111",
-  "name": "UltraSoft Towels",
-  "available": "0"
+  "productID": "RQY-22222",
+  "name": "FreshScent Detergent",
+  "available": 0
 }

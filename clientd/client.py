@@ -24,7 +24,7 @@ TEST_PAYLOADS: Dict[str, Dict[str, str]] = {
     "in_stock": {"productID": "XYZ-12345"},
 
     # 3) Item Info = 200 and Stock = 404 (item exists but out of stock)
-    "out_of_stock": {"productID": "DEF-11111"},
+    "out_stock": {"productID": "RQY-22222"},
 }
 
 def print_test_payloads():

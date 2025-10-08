@@ -1,0 +1,113 @@
+HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: c0418f140c7f980ff92eb9d6239c86c7;o=1
+date: Wed, 01 Oct 2025 22:36:26 GMT
+server: Google Frontend
+content-length: 72
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: 4d271ec2147e1c41ffacc3207048ca6a
+date: Wed, 01 Oct 2025 22:36:26 GMT
+server: Google Frontend
+content-length: 68
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"ABC-67890","name":"SuperClean Spray","available":"50"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: c830f6434bb4886b1c5979bd7df9afc4
+date: Wed, 01 Oct 2025 22:36:26 GMT
+server: Google Frontend
+content-length: 67
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"DEF-11111","name":"UltraSoft Towels","available":"0"}HTTP/2 404 
+content-type: application/json
+x-cloud-trace-context: 26f1460674fc7a2c6729681f61101b5c
+date: Wed, 01 Oct 2025 22:36:26 GMT
+server: Google Frontend
+content-length: 29
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"error":"Product not found"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: bc009a71af5bd71c91357d1ef4f33623;o=1
+date: Wed, 01 Oct 2025 22:39:25 GMT
+server: Google Frontend
+content-length: 72
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: b55036acd0a5e25e5fb0624c2064e125
+date: Wed, 01 Oct 2025 22:39:25 GMT
+server: Google Frontend
+content-length: 68
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"ABC-67890","name":"SuperClean Spray","available":"50"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: 35847712074db2c5a0b39d0f85863093
+date: Wed, 01 Oct 2025 22:39:25 GMT
+server: Google Frontend
+content-length: 67
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"DEF-11111","name":"UltraSoft Towels","available":"0"}HTTP/2 404 
+content-type: application/json
+x-cloud-trace-context: 084d2a5fbab2461fa6b08513181a42a1
+date: Wed, 01 Oct 2025 22:39:26 GMT
+server: Google Frontend
+content-length: 29
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"error":"Product not found"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: a8685520c4cd358dd2bec9b3b3528b40
+date: Wed, 01 Oct 2025 22:39:26 GMT
+server: Google Frontend
+content-length: 72
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: 36ceb16e77887bf7714fbeae3f01c7a8;o=1
+date: Mon, 06 Oct 2025 00:57:52 GMT
+server: Google Frontend
+content-length: 72
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: b268ed69b6ddd9e923f6f2ccbeb1afb4;o=1
+date: Mon, 06 Oct 2025 00:57:52 GMT
+server: Google Frontend
+content-length: 68
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"ABC-67890","name":"SuperClean Spray","available":"50"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: 83712e8390c20311306dfc770db16e66
+date: Mon, 06 Oct 2025 00:57:52 GMT
+server: Google Frontend
+content-length: 67
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"DEF-11111","name":"UltraSoft Towels","available":"0"}HTTP/2 404 
+content-type: application/json
+x-cloud-trace-context: eced65974efde81b2c55444ecc6d9ffc
+date: Mon, 06 Oct 2025 00:57:53 GMT
+server: Google Frontend
+content-length: 29
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"error":"Product not found"}HTTP/2 200 
+content-type: application/json
+x-cloud-trace-context: 40deac21e9ccb5bae36c0f926d50c73c
+date: Mon, 06 Oct 2025 00:57:53 GMT
+server: Google Frontend
+content-length: 72
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+{"productID":"XYZ-12345","name":"Amayon Basics Wipes","available":"210"}

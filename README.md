@@ -163,7 +163,7 @@ curl -i -X POST "https://aggregatord-19495045139.us-west2.run.app/lookup" \
 _Expected: HTTP 200 response with item info and `"available": 0`._
 
 Replace `NON_EXISTENT_ID`, `VALID_ID_WITH_STOCK`, and `VALID_ID_NO_STOCK` with actual product IDs for your test cases.
-- Respectively, using our own dummy data: ABC-99999, XYZ-12345, DEF-11111
+- Respectively, using our own dummy data: ABC-99999, XYZ-12345, RQY-22222
 
 
 
