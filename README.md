@@ -2,6 +2,9 @@
 # Project Overview
 
 This repository contains a **microservices-based application** developed as part of a hands-on assignment to explore modern cloud-native architectures. The project demonstrates how a monolithic workflow can be broken down into smaller, independent services, each with a distinct responsibility, and deployed using **Docker containers**.
+<p align="center">
+	<img width="709" height="570" alt="microservicesdiagram" src="https://github.com/user-attachments/assets/eae87600-a00a-4340-ad67-9f7fbc52ed50" />
+</p>
 
 ## What is Microservices?
 
