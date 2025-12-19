@@ -1,3 +1,45 @@
+
+# Project Overview
+
+This repository contains a **microservices-based application** developed as part of a hands-on assignment to explore modern cloud-native architectures. The project demonstrates how a monolithic workflow can be broken down into smaller, independent services, each with a distinct responsibility, and deployed using **Docker containers**.
+
+## What is Microservices?
+
+Microservices architecture is an approach to building applications as a suite of small, independent services that communicate over APIs. Each service focuses on a specific domain, allowing for scalability, easier maintenance, and independent deployment. This project demonstrates this architecture in practice.
+
+## Application Architecture
+
+The application consists of the following services:
+
+- **Aggregator Service** – Acts as the single public entry point for client requests. Receives a `productID` and coordinates responses from the internal services.  
+- **Item Info Service** – Manages product metadata, such as product names.  
+- **Stock Service** – Maintains inventory counts for products.  
+
+**Workflow:**  
+
+1. The client sends a `POST /lookup` request with a `productID` to the aggregator.  
+2. The aggregator queries the **Item Info Service** (`GET /item-info/items/{productID}`) and **Stock Service** (`GET /stock-info/items/{productID}`).  
+3. Responses are merged according to the following logic:  
+   - If Item Info is not found, a 404 error is returned.  
+   - If both services return results, the aggregator merges the data into a single response.  
+   - If Item Info exists but Stock is missing, the aggregator returns the product info with an availability of 0.  
+
+## Implementation Details
+
+- Services are implemented in **Python** using REST APIs.  
+- Dummy product data is stored in **CSV files**, simulating a database for each service.  
+- Each service has its own **Dockerfile** for containerization, enabling deployment on cloud platforms or local development environments.  
+
+## Skills Demonstrated
+
+- Design and implementation of **microservices architecture**.  
+- API development using Python.  
+- **Containerization with Docker**.  
+- Data integration and aggregation across multiple services.  
+- Handling service errors and fallback strategies in distributed systems.  
+
+
+
 # Docker Setup & Testing Instructions
 ## 0. 
     While in the main project root directory...
